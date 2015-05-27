@@ -1,5 +1,6 @@
 # SPIM
 Simple Personal Infomation Management 
+- do not like CMS, it is lightweight ,using markdown only instead of HTML content editor
 
 ## Perspective
 ### Simple design: 
