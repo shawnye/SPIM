@@ -1,0 +1,153 @@
+body, form{
+	margin:0px;
+	pading:0px;
+	
+}
+.container{
+	margin:0px;
+	pading:0px;
+}
+.container_handheld{
+	margin:0px;
+	pading:0px;
+	max-width: 480px;
+}
+
+.hr4clear{
+	border:0px;
+	margin:0px;
+	padding:0px;
+	clear:both; /*for header*/
+}
+ 
+.a_hilight{
+	background: yellow;
+	
+}
+
+a{
+	text-decoration: none;
+	/*background-color:#dafee2;*/
+	color:blue;
+ }
+a:hover{
+	color:blue;
+}
+a:VISITED{
+	color:blue;
+}
+.title{
+	margin:1 0 1 0;
+	pading:0px;
+	text-align:left;
+	font-weight:bold;
+	background: url('../images/bg_blue.png') repeat-x center;
+}
+
+img{
+	border:0px;
+	margin:0px;
+	padding:0px;
+	vertical-align: middle;
+ }
+ 
+table{
+	border-collapse: collapse;
+	border: 1px solid black;
+	/*width:100%;导致日历显示出错*/
+}
+table thead td{
+	white-space: nowrap;
+	font-weight: bold;
+	text-align: center;
+}
+
+td{
+ 	border: 1px solid gray;
+ }
+ th{
+ 	border-width: 2px;
+	border-style: solid;
+	border-color: lightgray gray gray lightgray;
+	
+ 	background-color: lightgray;
+}
+.header_containter{
+}
+.header_block{ 
+	float:left;
+	background: #ccffcc;
+	border-bottom:1px solid gray;
+	height: 1.3em; 
+	font-size: 11pt;
+ 	min-width: 330px;
+ 	text-align: left;
+ }
+
+.footer{
+	clear:both;
+	text-align: center;
+}
+
+.paging{
+	font-size: 12pt;  
+}
+
+ .emphasis{
+ 	color: #cc0000;
+ 	font-weight: bold;
+ }
+ 
+ .tr_hilight{
+ 	background: #ccffcc;
+ 	color: #cc0000;
+ }
+ 
+  .compound_input{
+ 	background: yellow;
+ 	color:red;
+ }
+ 
+ .secret{
+ 	color:gray;
+ }
+ 
+ .doc_content code{
+ 	background: #ccffcc;
+ 	border-bottom:1px solid lightgray;
+ }
+ 
+ .doc_content blockquote{
+    display:block;
+ 	background: #ffff99;
+ 	border:1px solid lightgray;
+ }
+ 
+ .doc_content ul{
+    display:block;
+ 	background: #ccffcc;
+	margin-left:1em;
+ 	word-wrap: break-word;
+ }
+ 
+  .doc_content ol{
+    display:block;
+    margin-left:1em;
+ 	background: #ccffcc;
+ 	 
+ 	word-wrap: break-word; 
+ } 
+ .doc_content li{
+ 	list-style-position: outside !important;
+ 	padding: 0 3px 0 10px !important;
+  	background: #F7F7F7;
+ }
+ 
+ /*pretty code */
+ .doc_content ol li{ 
+ 	border-left:1px solid gray; 
+ }
+ 
+ .a_view{
+ 	display: inline;
+ }
