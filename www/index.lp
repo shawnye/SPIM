@@ -1,6 +1,7 @@
 <? mg.write("HTTP/1.1 200 OK") ?>
-<? mg.write("Content-Type: text/html") ?>
-<!-- Apache、IIS、Nginx等绝大多数web服务器，都不允许静态文件响应POST请求，否则会返回“HTTP/1.1 405 Method not allowed”错误 -->
+<? mg.write("Content-Type: text/html") 
+-- Apache、IIS、Nginx等绝大多数web服务器，都不允许静态文件响应POST请求，否则会返回“HTTP/1.1 405 Method not allowed”错误
+?> 
 
 <!doctype html>
 <?    pu = require"tag_builder" --这里不应local ，否则下面的chunk不可见 ?>
