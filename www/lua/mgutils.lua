@@ -16,11 +16,21 @@ function getStatus( statusCode )
   return nil
 end
 
-function M.writeHeader( statusCode )
+function M.getHeader( statusCode )
     local status = getStatus( tostring(statusCode))
-    mg.write("HTTP/1.1 ".. statusCode .. " " .. status .."\r\n")
-    mg.write("Connection: close\r\n")
-    mg.write("Content-Type: text/html; charset=utf-8\r\n")
+    local bf = {}
+    bf[#bf+1] = "HTTP/1.1 "
+    bf[#bf+1] = statusCode
+    bf[#bf+1] = " "
+    bf[#bf+1] = status
+    bf[#bf+1] = "\r\n"
+    bf[#bf+1] = "Connection: close"
+    bf[#bf+1] = "\r\n"
+    bf[#bf+1] = "Content-Type: text/html; charset=utf-8"
+    bf[#bf+1] = "\r\n"
+    bf[#bf+1] = "\r\n" --must 2 lines
+
+    return table.concat( bf )
 end
 
 statusCode=400
