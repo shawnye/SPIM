@@ -29,3 +29,5 @@ mg.request_info            -- a table with the following request information
      .script_name          -- name of the Lua script
      .https                -- true if accessed by https://, false otherwise
      .remote_user          -- user name if authenticated, nil otherwise
+
+mg.request_info.http_headers.Referer  --headers
