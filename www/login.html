@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<base href="{{base}}" />
+
+{(header.html ,{title='系统登录'})}
+<style type="text/css">
+
+.login_form_div{
+  width: 400px;
+
+}
+.login_table{
+  border-collapse: collapse;
+  text-align: left;
+  width: 400px;
+}
+.login_table caption {
+    border:1px solid black;
+    text-align: center;
+    font-size: larger;
+}
+.error{
+  color:red;
+  background: lightyellow;
+}
+.buttons{
+  text-align: right;
+}
+.desc{
+  color:gray;
+  font-size: 11pt;
+}
+.html_alert{
+  display: none;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+  if(!(window.File && window.FileReader && window.FileList)){
+    $('.html_alert').css('display','block');
+  }
+
+
+  $('.login_form_div').center({'toTop': 50});//中间靠上50px
+
+});
+
+</script>
+
+</head>
+<body>
+
+<div class="login_form_div">
+
+<form action="lua/login.lua" id="loginForm" method="post" autocomplete="off" accept-charset="utf-8">
+<input type="hidden" name="sid" value="{{sid}}">
+<noscript><div style="color:red;"><img alt="error" src="images/exclamation.gif">警告：您的浏览器安全设置禁止了脚本运行，导致系统无法正常运行。</div></noscript>
+<table class="login_table" border="1">
+  <caption class="title">SPIM系统登录</caption>
+  <tbody>
+    <tr>
+      <td colspan="2" style="text-align: center;font-size: 11pt;background-color: #ccffcc;">
+      今天是 {{today}}
+      </td>
+    </tr>
+    <tr class="html_alert">
+      <td colspan="2" style="font-size: 11pt;color:red;">
+      <img alt="error" src="images/exclamation.gif">您的浏览器不支持HTML5特性。<br/>
+      请使用支持<a href="http://baike.baidu.com/view/951383.htm?fr=aladdin" target="_blank">HTML5</a>的浏览器, 注:不支持IE4 ~ IE8浏览器。
+      </td>
+    </tr>
+
+    <tr>
+      <td>帐号：</td>
+      <td><input type="text" name="account" id="account"  maxlength="50"/></td>
+    </tr>
+    <tr>
+      <td>密码：</td>
+      <td><input type="password" name="password" id="password"  maxlength="25" /></td>
+    </tr>
+
+    <tr >
+      <td colspan="2"  >
+        <div class="buttons"><input type="submit" value="登录&gt;&gt;"/>&nbsp;&nbsp;&nbsp;&nbsp;</div>
+      </td>
+    </tr>
+
+    <tr >
+      <td colspan="2"  >
+        <div class="desc">来访IP：{{ip}} &nbsp;|&nbsp;版本：{{version}}</div>
+      </td>
+    </tr>
+    <tr >
+      <td colspan="2"  >
+        <div class="desc">{( footer.html )}</div>
+      </td>
+    </tr>
+
+  </tbody>
+</table>
+</form>
+
+</div>
+
+
+</body>
+</html>

@@ -16,7 +16,7 @@ function getStatus( statusCode )
   return nil
 end
 
-function M.getHeader( statusCode )
+function M.getHeader( statusCode , fileName)
     local status = getStatus( tostring(statusCode))
     local bf = {}
     bf[#bf+1] = "HTTP/1.1 "
@@ -26,15 +26,24 @@ function M.getHeader( statusCode )
     bf[#bf+1] = "\r\n"
     bf[#bf+1] = "Connection: close"
     bf[#bf+1] = "\r\n"
-    bf[#bf+1] = "Content-Type: text/html; charset=utf-8"
+
+    if fileName then
+      bf[#bf+1] = "Content-Type: application/octet-stream"
+      bf[#bf+1] = "\r\n"
+      bf[#bf+1] = "Content-Disposition: attachment; filename="
+      bf[#bf+1] = fileName
+    else
+      bf[#bf+1] = "Content-Type: text/html; charset=utf-8"
+
+    end
     bf[#bf+1] = "\r\n"
     bf[#bf+1] = "\r\n" --must 2 lines
 
     return table.concat( bf )
 end
 
-function M.writeHeader( statusCode )
-  mg.write (M.getHeader(statusCode) )
+function M.writeHeader( statusCode , fileName)
+  mg.write (M.getHeader(statusCode, fileName) )
 end
 
 function M.isPost()
@@ -45,7 +54,7 @@ function M.isFileUpload()
   return M.isPost() and mg.request_info.content_type:lower():sub(1,19) == 'multipart/form-data'
 end
 
-function M.getHeader( key )
+function M.getHeader( key)
   if not key then
     return nil
   end
