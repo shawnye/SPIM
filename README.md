@@ -18,4 +18,5 @@ Simple Personal Infomation Management
 ### Lightweight as desktop application:
 - using [civetweb](https://github.com/bel2125/civetweb), built with lua support.
 - using [Lua](http://www.lua.org) as server-side language.
+- using [lua-resty-template](https://github.com/bungle/lua-resty-template) as template engine for HTML. Small changed to adapt civetweb.
 - server-side resource requirement is small, HTML5-friendly browser is required.

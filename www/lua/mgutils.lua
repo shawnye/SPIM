@@ -2,8 +2,13 @@ local M = {}
 
 local mapping = {
   C_200 = "OK",
-  C_400 = "Bad Request"
-
+  C_400 = "Bad Request",
+  C_401 = "Unauthorized",
+  C_403 = "Forbidden",
+  C_404 = "Not Found",
+  C_500 = "Internal Server Error",
+  C_502 = "Bad Gateway",
+  C_503 = "Service Unavailable"
 }
 function getStatus( statusCode )
   statusCode = "C_" .. statusCode
@@ -75,6 +80,21 @@ until (add_data == nil);
 
 return table.concat(stringtab)
 
+end
+
+--auto-decoding non-acsii
+function M.parse2table( querystring )
+  if (not querystring) or type(querystring) ~= 'string' then
+    return {}
+  end
+
+  local t = {}
+ 
+  for k, v in string.gmatch(querystring, "(%w+)=([^&]+)") do
+       t[k] = mg.url_decode(v)
+  end
+
+  return t
 end
 
 --statusCode=400
