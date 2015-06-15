@@ -17,6 +17,21 @@ The following features are available:
     mg.write("<li>lua file system</li>")
   end
 
+  if ansicode then
+    mg.write("<li>lua  ansicode: " .. ansicode.u82a('u82a=>测试中文') .. "</li>")
+  end
+
+  if cjson then
+
+    t = {
+      name="李丽",
+      age = 19
+   }
+    text = cjson.encode(t)
+
+    mg.write("<li>lua  cjson: " .. text .. "</li>")
+  end
+
 
 mg.write("</ul></p>\r\n")
 mg.write("<p> Today is " .. os.date("%A") .. "</p>\r\n")
